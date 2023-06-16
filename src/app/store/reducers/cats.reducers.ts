@@ -1,10 +1,11 @@
-import { AppState } from '../state';
-import { initialAppState } from '../state/app.state'
+import { CatsState } from '../state';
 import { AppActions, EAppActions } from '../actions/app.actions'
+import { initialCatsState } from '../state/cats.state'
 
-export const appReducers = (state = initialAppState, action: AppActions): AppState => {
+export const catsReducers = (state = initialCatsState, action: AppActions): CatsState => {
   switch (action.type) {
     case EAppActions.GET_CATS_SUCCESS: {
+      console.log(action.payload)
       return {
         ...state,
         cats: action.payload
@@ -13,7 +14,7 @@ export const appReducers = (state = initialAppState, action: AppActions): AppSta
     case EAppActions.GET_BREEDS_SUCCESS: {
       return {
         ...state,
-        breeds: action.payload
+        breeds: [{id: null, name: 'All breeds'}, ...action.payload]
       }
     }
     case EAppActions.SET_LIMIT_SUCCESS: {

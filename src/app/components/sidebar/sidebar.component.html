@@ -1,0 +1,14 @@
+<form
+  *ngIf="form"
+  class="container"
+  [formGroup]="form"
+>
+  <app-select
+    [options]="breeds$ | async"
+    [control]="form.get('breed') | formControl"
+  ></app-select>
+  <app-select
+    [options]="limits"
+    [control]="form.get('limit') | formControl"
+  ></app-select>
+</form>

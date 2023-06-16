@@ -1,13 +1,6 @@
 import { AppState } from './index'
-import { BreedsModel, CatsModel } from '../../models'
+import { initialCatsState } from './cats.state'
 
 export const initialAppState: AppState = {
-  cats: [] as CatsModel,
-  breeds: [] as BreedsModel,
-  limit: 10,
-  page: 1,
-}
-
-export function getInitialState(): AppState {
-  return initialAppState
+  cats: initialCatsState
 }

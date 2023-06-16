@@ -11,10 +11,11 @@ export class HttpApiService {
   constructor(private http: HttpClient) {
   }
 
-  getCats(query: any) {
-    return this.http.get<CatsModel>(ENVIRONMENT.apiKey + 'images/search', {params: query})
+  getCats(params: any) {
+    const finalParams = params.breed_ids ? { params } : {}
+    return this.http.get<CatsModel>(ENVIRONMENT.api + 'images/search?' + ENVIRONMENT.apiKey, finalParams)
   }
   getBreeds() {
-    return this.http.get<BreedsModel>(ENVIRONMENT.apiKey + 'breeds')
+    return this.http.get<BreedsModel>(ENVIRONMENT.api + 'breeds')
   }
 }

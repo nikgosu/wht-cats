@@ -1,17 +1,26 @@
-import { AppState } from '../state'
+import { AppState, CatsState } from '../state'
+import { createSelector } from '@ngrx/store'
 
 const selectCats = (state: AppState) => {
   return state.cats
 }
 
-const selectBreeds = (state: AppState) => {
-  return state.breeds
-}
+export const selectCatsList = createSelector(
+  selectCats,
+  (state: CatsState) => state.cats
+)
 
-const selectLimit = (state: AppState) => {
-  return state.limit
-}
+export const selectBreeds = createSelector(
+  selectCats,
+  (state: CatsState) => state.breeds
+)
 
-const selectPage = (state: AppState) => {
-  return state.page
-}
+export const selectLimit = createSelector(
+  selectCats,
+  (state: CatsState) => state.limit
+)
+
+export const selectPage = createSelector(
+  selectCats,
+  (state: CatsState) => state.page
+)

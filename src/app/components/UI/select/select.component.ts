@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormControl } from '@angular/forms'
 
 @Component({
   selector: 'app-select',
@@ -7,5 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SelectComponent {
   @Input() selectLabel!: string
-  @Input() options!: any[]
+  @Input() options!: any[] | null
+  @Input() control!: FormControl
+
 }
