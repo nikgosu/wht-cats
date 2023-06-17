@@ -1,5 +1,10 @@
 <mat-drawer-container class="container">
-  <mat-drawer mode="side" [opened]="isOpened"><ng-content select=".sidebar"></ng-content></mat-drawer>
+  <mat-drawer
+    mode="side"
+    [opened]="isOpened"
+  >
+    <ng-content select=".sidebar"></ng-content>
+  </mat-drawer>
   <mat-drawer-content
   >
     <ng-content

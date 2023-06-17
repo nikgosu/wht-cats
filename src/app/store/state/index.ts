@@ -5,6 +5,7 @@ export interface CatsState {
   breeds: BreedsModel
   isLoading: boolean
 }
+
 export interface AppState {
   cats: CatsState
 }

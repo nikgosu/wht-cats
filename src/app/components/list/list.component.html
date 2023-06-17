@@ -1,29 +1,29 @@
 <mat-progress-spinner
   *ngIf="isLoading$ | async"
-  class="spinner"
   [color]="color"
   [mode]="mode"
-  [value]="value">
+  [value]="value"
+  class="spinner"
+>
 </mat-progress-spinner>
 <mat-grid-list
+  (window:resize)="onResize($event)"
   *ngIf="!(isLoading$ | async)"
   [cols]="breakpoint"
-  rowHeight="1:1"
   class="container"
-  (window:resize)="onResize($event)"
+  rowHeight="1:1"
 >
   <ng-container
     *ngFor="let cat of cats$ | async"
   >
     <mat-grid-tile>
       <img
-        src="{{cat['url']}}"
         alt="{{cat['url']}}"
-        width="95%"
         height="95%"
+        src="{{cat['url']}}"
         style="object-fit: cover; border-radius: 25px"
+        width="95%"
       >
     </mat-grid-tile>
-
   </ng-container>
 </mat-grid-list>

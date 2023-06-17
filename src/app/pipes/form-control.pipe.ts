@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {AbstractControl, FormControl} from "@angular/forms";
+import { AbstractControl, FormControl } from '@angular/forms';
 
 @Pipe({
   name: 'formControl'
@@ -7,8 +7,11 @@ import {AbstractControl, FormControl} from "@angular/forms";
 export class FormControlPipe implements PipeTransform {
 
   transform(value: AbstractControl | null) {
-    if (value) return value as FormControl<typeof value['value']>;
-    else return new FormControl('')
+    if (value) {
+      return value as FormControl<typeof value['value']>;
+    } else {
+      return new FormControl('')
+    }
   }
 
 }

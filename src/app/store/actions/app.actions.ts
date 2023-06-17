@@ -1,4 +1,4 @@
-import {Action} from "@ngrx/store";
+import { Action } from '@ngrx/store';
 import { BreedsModel, CatsModel } from '../../models'
 
 export enum EAppActions {
@@ -36,6 +36,7 @@ export class GetBreedsSuccess implements Action {
   constructor(public payload: BreedsModel) {
   }
 }
+
 export class SetIsLoading implements Action {
   public readonly type = EAppActions.SET_IS_LOADING
 

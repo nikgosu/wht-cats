@@ -2,11 +2,11 @@
   (window:resize)="onResize($event)"
 >
   <button
-    *ngIf="isMobile"
-    mat-icon-button
-    class="example-icon"
-    aria-label="Example icon-button with menu icon"
     (click)="onMenuClick.emit()"
+    *ngIf="isMobile"
+    aria-label="Example icon-button with menu icon"
+    class="example-icon"
+    mat-icon-button
   >
     <mat-icon>menu</mat-icon>
   </button>
