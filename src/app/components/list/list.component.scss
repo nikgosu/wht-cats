@@ -1,5 +1,6 @@
 mat-progress-spinner {
-  margin: 30dvh auto;
+  margin: calc(50dvh - 64px) auto;
+  transform: translateY(-50%);
 }
 
 .container {
