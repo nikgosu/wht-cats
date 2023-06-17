@@ -15,7 +15,7 @@ export const catsReducers = (state = initialCatsState, action: AppActions): Cats
       return {
         ...state,
         isLoading: false,
-        breeds: [{ id: 'all', name: 'All breeds' }, ...action.payload]
+        breeds: [{id: 'all', name: 'All breeds'}, ...action.payload]
       }
     }
     case EAppActions.SET_IS_LOADING: {

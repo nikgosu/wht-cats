@@ -1,10 +1,10 @@
 <app-toolbar
-  (onMenuClick)="handleMenuClick($event)"
   class="sidebar"
+  (onMenuClick)="handleMenuClick($event)"
 ></app-toolbar>
 <app-main-layer
-  (window:resize)="onResize($event)"
   [isOpened]="isOpened"
+  (window:resize)="onResize($event)"
 >
   <app-sidebar
     class="sidebar"

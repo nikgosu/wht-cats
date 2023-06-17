@@ -1,16 +1,16 @@
 <form
   *ngIf="form"
-  [formGroup]="form"
   class="container"
+  [formGroup]="form"
 >
   <p>Breeds</p>
   <app-select
-    [control]="form.get('breed') | formControl"
     [options]="breeds$ | async"
+    [control]="form.get('breed') | formControl"
   ></app-select>
   <p>Cats per page</p>
   <app-select
-    [control]="form.get('limit') | formControl"
     [options]="limits"
+    [control]="form.get('limit') | formControl"
   ></app-select>
 </form>
