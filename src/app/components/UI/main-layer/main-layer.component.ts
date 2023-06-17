@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-main-layer',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-layer.component.scss']
 })
 export class MainLayerComponent {
+  @Input() isOpened = true
 
 }

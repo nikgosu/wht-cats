@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WHT-CATS';
+  isOpened = true
+
+  ngOnInit() {
+    this.isOpened = !(window.innerWidth <= 800)
+  }
+  onResize(event: any) {
+    this.isOpened = !(event.target.innerWidth <= 800);
+  }
+  handleMenuClick(event: boolean) {
+    this.isOpened = event ? event : !this.isOpened
+  }
 }

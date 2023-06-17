@@ -1,8 +1,29 @@
-<mat-grid-list cols="3" rowHeight="3:2">
-  <mat-grid-tile>1</mat-grid-tile>
-  <mat-grid-tile>2</mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
-  <mat-grid-tile>4</mat-grid-tile>
+<mat-progress-spinner
+  *ngIf="isLoading$ | async"
+  class="spinner"
+  [color]="color"
+  [mode]="mode"
+  [value]="value">
+</mat-progress-spinner>
+<mat-grid-list
+  *ngIf="!(isLoading$ | async)"
+  [cols]="breakpoint"
+  rowHeight="1:1"
+  class="container"
+  (window:resize)="onResize($event)"
+>
+  <ng-container
+    *ngFor="let cat of cats$ | async"
+  >
+    <mat-grid-tile>
+      <img
+        src="{{cat['url']}}"
+        alt="{{cat['url']}}"
+        width="95%"
+        height="95%"
+        style="object-fit: cover; border-radius: 25px"
+      >
+    </mat-grid-tile>
+
+  </ng-container>
 </mat-grid-list>

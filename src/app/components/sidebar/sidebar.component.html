@@ -3,10 +3,12 @@
   class="container"
   [formGroup]="form"
 >
+  <p>Breeds</p>
   <app-select
     [options]="breeds$ | async"
     [control]="form.get('breed') | formControl"
   ></app-select>
+  <p>Cats per page</p>
   <app-select
     [options]="limits"
     [control]="form.get('limit') | formControl"

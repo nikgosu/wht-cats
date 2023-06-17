@@ -5,28 +5,23 @@ import { initialCatsState } from '../state/cats.state'
 export const catsReducers = (state = initialCatsState, action: AppActions): CatsState => {
   switch (action.type) {
     case EAppActions.GET_CATS_SUCCESS: {
-      console.log(action.payload)
       return {
         ...state,
+        isLoading: false,
         cats: action.payload
       }
     }
     case EAppActions.GET_BREEDS_SUCCESS: {
       return {
         ...state,
-        breeds: [{id: null, name: 'All breeds'}, ...action.payload]
+        isLoading: false,
+        breeds: [{id: 'all', name: 'All breeds'}, ...action.payload]
       }
     }
-    case EAppActions.SET_LIMIT_SUCCESS: {
+    case EAppActions.SET_IS_LOADING: {
       return {
         ...state,
-        limit: action.payload
-      }
-    }
-    case EAppActions.SET_PAGE_SUCCESS: {
-      return {
-        ...state,
-        page: action.payload
+        isLoading: action.payload
       }
     }
     default:

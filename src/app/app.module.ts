@@ -19,7 +19,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { SidebarComponent } from './components/sidebar/sidebar.component'
 import { appReducers } from './store/reducers'
 import { ReactiveFormsModule } from '@angular/forms';
-import { FormControlPipe } from './pipes/form-control.pipe'
+import { FormControlPipe } from './pipes/form-control.pipe';
+import { MatAutocompleteModule } from '@angular/material/autocomplete'
+import { MatInputModule } from '@angular/material/input'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
+import { MatIconModule } from '@angular/material/icon'
+import { MatButtonModule } from '@angular/material/button'
 
 @NgModule({
   declarations: [
@@ -29,7 +34,7 @@ import { FormControlPipe } from './pipes/form-control.pipe'
     MainLayerComponent,
     SelectComponent,
     SidebarComponent,
-    FormControlPipe
+    FormControlPipe,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,12 @@ import { FormControlPipe } from './pipes/form-control.pipe'
     MatGridListModule,
     MatSidenavModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

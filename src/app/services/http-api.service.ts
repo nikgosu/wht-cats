@@ -12,10 +12,10 @@ export class HttpApiService {
   }
 
   getCats(params: any) {
-    const finalParams = params.breed_ids ? { params } : {}
+    const finalParams = params.breed_ids !== 'all' ? { params } : { params: {limit: params.limit}}
     return this.http.get<CatsModel>(ENVIRONMENT.api + 'images/search?' + ENVIRONMENT.apiKey, finalParams)
   }
   getBreeds() {
-    return this.http.get<BreedsModel>(ENVIRONMENT.api + 'breeds')
+    return this.http.get<BreedsModel>(ENVIRONMENT.api + 'breeds?' + ENVIRONMENT.apiKey)
   }
 }

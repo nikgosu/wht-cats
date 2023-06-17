@@ -15,12 +15,7 @@ export const selectBreeds = createSelector(
   (state: CatsState) => state.breeds
 )
 
-export const selectLimit = createSelector(
+export const selectIsLoading = createSelector(
   selectCats,
-  (state: CatsState) => state.limit
-)
-
-export const selectPage = createSelector(
-  selectCats,
-  (state: CatsState) => state.page
+  (state: CatsState) => state.isLoading
 )

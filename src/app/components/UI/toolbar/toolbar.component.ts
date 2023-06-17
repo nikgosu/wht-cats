@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
+  @Output() onMenuClick = new EventEmitter()
+  isMobile = false
+
+  ngOnInit() {
+    this.isMobile = (window.innerWidth <= 800);
+  }
+
+  onResize(event: any) {
+    this.isMobile = (event.target.innerWidth <= 800);
+  }
 }

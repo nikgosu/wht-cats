@@ -3,3 +3,13 @@ mat-toolbar {
   justify-content: center;
   align-items: center;
 }
+
+.example-spacer {
+  flex: 0.5 1 auto;
+}
+
+@media screen and (max-width: 800px) {
+  mat-toolbar {
+    justify-content: start;
+  }
+}
